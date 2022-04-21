@@ -1,0 +1,30 @@
+﻿@model List<ClarkCodingChallenge.Models.Contact>
+
+@if (TempData["Message"] != null)
+{
+    @TempData["Message"]
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+<h3>@ViewBag.Title</h3>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+    </tr>
+    @foreach (var entry in Model)
+    {
+        <tr>
+            <td>@entry.Id</td>
+            <td>@entry.FirstName</td>
+            <td>@entry.LastName</td>
+            <td>@entry.Email</td>
+        </tr>
+    }
+</table>
